@@ -2,8 +2,9 @@ from sys import exit # imports function "exit" from file "sys"
 
 def gold_room(): #defining "gold_room" function
     print "This room is full of gold.  How much do you take?"
-    next = raw_input("> ")
-    while next.isdigit() is False:
+    next = raw_input("> ") # next is equal the string given in raw_input
+    while next.isdigit() is False: #"while" is used here becasue it's is continueous.
+        #"if" wouldnt work because it would only loop once.
         print "Man, learn to type a number."
         try:
             next = raw_input("> ")
@@ -33,7 +34,7 @@ def bear_room():
 
         if next == "take honey":
             dead("The bear looks at you then slaps your face off.")
-        elif next == "taunt bear" and not bear_moved:
+        elif "taunt" in next and not bear_moved:
             print "The bear has moved from the door. You can go through it now."
             bear_moved = True
         elif next == "taunt bear" and bear_moved:
